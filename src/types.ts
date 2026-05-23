@@ -26,10 +26,10 @@ export interface QurbaniState {
 }
 
 export const ANIMAL_SPECS: Record<AnimalType, { name: string; minAge: string; maxPartners: number; icon: string }> = {
-  sheep: { name: 'مەڕ', minAge: 'تەمەنی لە ٦ مانگ کەمتر نەبێت.', maxPartners: 1, icon: '🐑' },
-  goat: { name: 'بزن', minAge: 'تەمەنی لە ١ ساڵ کەمتر نەبێت.', maxPartners: 1, icon: '🐐' },
-  cow: { name: 'مانگا / گۆڵک', minAge: 'تەمەنی لە ٢ ساڵ کەمتر نەبێت.', maxPartners: 7, icon: '🐄' },
-  camel: { name: 'وشتر', minAge: 'تەمەنی لە ٥ ساڵ کەمتر نەبێت.', maxPartners: 7, icon: '🐪' },
+  sheep: { name: 'مەڕ', minAge: 'تەمەنی لە 6 مانگ کەمتر نەبێت.', maxPartners: 1, icon: '🐑' },
+  goat: { name: 'بزن', minAge: 'تەمەنی لە 1 ساڵ کەمتر نەبێت.', maxPartners: 1, icon: '🐐' },
+  cow: { name: 'مانگا / گۆڵک', minAge: 'تەمەنی لە 2 ساڵ کەمتر نەبێت.', maxPartners: 7, icon: '🐄' },
+  camel: { name: 'وشتر', minAge: 'تەمەنی لە 5 ساڵ کەمتر نەبێت.', maxPartners: 7, icon: '🐪' },
 };
 
 export const STATUS_MAP: Record<DeliveryStatus, { label: string; colorClass: string; iconClass: string }> = {
@@ -43,5 +43,5 @@ export const DEFAULT_STATE: QurbaniState = {
   totalWeight: 0,
   recipients: [],
   expenses: [],
-  darkMode: false,
+  darkMode: true,
 };

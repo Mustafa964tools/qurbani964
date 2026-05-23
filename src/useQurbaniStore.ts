@@ -8,7 +8,11 @@ export function useQurbaniStore() {
     try {
       const item = window.localStorage.getItem(STORAGE_KEY);
       if (item) {
-        return JSON.parse(item) as QurbaniState;
+        const parsed = JSON.parse(item) as QurbaniState;
+        if (parsed.darkMode === undefined) {
+          parsed.darkMode = true;
+        }
+        return parsed;
       }
     } catch (error) {
       console.warn('Error reading localStorage', error);

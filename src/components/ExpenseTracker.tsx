@@ -33,22 +33,22 @@ export function ExpenseTracker({ expenses, partners, onAdd, onRemove }: Props) {
   return (
     <div className="bg-white dark:bg-gray-900 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-800 p-6 mb-6">
       <h2 className="text-xl font-bold mb-6 text-primary-800 dark:text-primary-400 flex items-center gap-2">
-        <span className="bg-primary-100 dark:bg-primary-900/50 p-2 rounded-lg text-primary-600 dark:text-primary-400">٤</span>
+        <span className="bg-primary-100 dark:bg-primary-900/50 p-2 rounded-lg text-primary-600 dark:text-primary-400">4</span>
         حیسابکەری خەرجییەکان
       </h2>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
         <div>
-          <div className="flex gap-3 mb-6">
+          <div className="flex flex-col sm:flex-row gap-3 mb-6">
             <input
               type="text"
               placeholder="جۆری خەرجی (نموونە: حەقدەستی قەساب)..."
               value={description}
               onChange={(e) => setDescription(e.target.value)}
               onKeyDown={(e) => e.key === 'Enter' && handleAdd()}
-              className="flex-1 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl px-4 py-3 text-sm text-gray-900 dark:text-white focus:ring-2 focus:ring-primary-500 focus:border-primary-500 outline-none"
+              className="flex-1 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl px-4 py-3 text-sm text-gray-900 dark:text-white focus:ring-2 focus:ring-primary-500 focus:border-primary-500 outline-none w-full"
             />
-            <div className="relative w-36 shrink-0">
+            <div className="relative w-full sm:w-36 shrink-0">
               <input
                 type="number"
                 min={0}
@@ -63,7 +63,7 @@ export function ExpenseTracker({ expenses, partners, onAdd, onRemove }: Props) {
             <button
               onClick={handleAdd}
               disabled={!description.trim() || !amount}
-              className="bg-primary-600 hover:bg-primary-700 disabled:bg-gray-300 disabled:dark:bg-gray-700 text-white p-3 rounded-xl transition flex items-center justify-center shrink-0"
+              className="bg-primary-600 hover:bg-primary-700 disabled:bg-gray-300 disabled:dark:bg-gray-700 text-white p-3 rounded-xl transition flex items-center justify-center shrink-0 w-full sm:w-auto cursor-pointer"
             >
               <Plus size={20} />
             </button>

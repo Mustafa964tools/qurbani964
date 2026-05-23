@@ -73,11 +73,11 @@ export function RecipientList({ listType, title, recipients, maxWeight, onAdd, o
           onKeyDown={(e) => e.key === 'Enter' && handleAdd()}
           className="w-full bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl px-4 py-2.5 text-sm text-gray-900 dark:text-white focus:ring-2 focus:ring-primary-500 focus:border-primary-500 outline-none"
         />
-        <div className="flex gap-2">
+        <div className="flex flex-col sm:flex-row gap-2">
           <div className="flex items-center gap-1 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl p-1 flex-1">
             <button
               onClick={() => setWeight(Math.max(0.5, requestedWeight - 0.5))}
-              className="p-1.5 text-gray-500 dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-700 rounded-lg transition shrink-0"
+              className="p-1.5 text-gray-500 dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-700 rounded-lg transition shrink-0 cursor-pointer"
               type="button"
             >
               <Minus size={18} />
@@ -98,7 +98,7 @@ export function RecipientList({ listType, title, recipients, maxWeight, onAdd, o
             </div>
             <button
               onClick={() => setWeight(requestedWeight + 0.5)}
-              className="p-1.5 text-gray-500 dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-700 rounded-lg transition shrink-0"
+              className="p-1.5 text-gray-500 dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-700 rounded-lg transition shrink-0 cursor-pointer"
               type="button"
             >
               <Plus size={18} />
@@ -107,7 +107,7 @@ export function RecipientList({ listType, title, recipients, maxWeight, onAdd, o
           <button
             onClick={handleAdd}
             disabled={!name.trim() || requestedWeight <= 0 || willExceed}
-            className="bg-primary-600 hover:bg-primary-700 disabled:bg-gray-300 disabled:dark:bg-gray-700 text-white px-4 py-2.5 rounded-xl transition flex items-center justify-center shrink-0 font-medium text-sm"
+            className="bg-primary-600 hover:bg-primary-700 disabled:bg-gray-300 disabled:dark:bg-gray-700 text-white px-4 py-2.5 rounded-xl transition flex items-center justify-center shrink-0 font-medium text-sm w-full sm:w-auto cursor-pointer"
           >
             زیادکردن
           </button>

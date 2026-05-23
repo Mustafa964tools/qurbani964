@@ -1,8 +1,16 @@
 @import "tailwindcss";
 @custom-variant dark (&:where(.dark, .dark *));
 
+@font-face {
+  font-family: 'CustomKurdishFont';
+  src: url('/custom-font.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 @theme {
-  --font-kurdish: "Vazirmatn", system-ui, sans-serif;
+  --font-kurdish: "CustomKurdishFont", "Vazirmatn", system-ui, sans-serif;
   --color-primary-50: #ecfdf5;
   --color-primary-100: #d1fae5;
   --color-primary-200: #a7f3d0;

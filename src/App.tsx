@@ -4,6 +4,8 @@ import { AnimalForm } from './components/AnimalForm';
 import { Distribution } from './components/Distribution';
 import { RecipientList } from './components/RecipientList';
 import { ExpenseTracker } from './components/ExpenseTracker';
+import { ShariaGuidelines } from './components/ShariaGuidelines';
+import { AdditionalInfo } from './components/AdditionalInfo';
 
 export default function App() {
   const { state, updateState, toggleDarkMode } = useQurbaniStore();
@@ -51,12 +53,12 @@ export default function App() {
               <h1 className="text-2xl md:text-3xl font-extrabold text-gray-900 dark:text-white">
                 کاری قوربانییەکەت ئاسان بکە
               </h1>
-              <p className="text-gray-500 dark:text-gray-400 mt-2">ڕێکخستن، حیسابکردن و دابەشکردن بەپێی یاسا شەرعییەکان</p>
+              <p className="text-gray-500 dark:text-gray-400 mt-2">ڕێکخستن، حیسابکردن و دابەشکردن بەپێی بنەما شەرعییەکان</p>
             </div>
           </div>
           <button
             onClick={toggleDarkMode}
-            className="p-3 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-full text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition"
+            className="p-3 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-full text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition cursor-pointer"
             aria-label="Toggle Dark Mode"
           >
             {state.darkMode ? <Sun size={24} /> : <Moon size={24} />}
@@ -77,7 +79,7 @@ export default function App() {
 
               <div className="bg-white dark:bg-gray-900 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-800 p-6 mb-6">
                 <h2 className="text-xl font-bold mb-6 text-primary-800 dark:text-primary-400 flex items-center gap-2">
-                  <span className="bg-primary-100 dark:bg-primary-900/50 p-2 rounded-lg text-primary-600 dark:text-primary-400">٣</span>
+                  <span className="bg-primary-100 dark:bg-primary-900/50 p-2 rounded-lg text-primary-600 dark:text-primary-400">3</span>
                   بەڕێوەبردنی لیستەکان و چاودێری گەیاندن
                 </h2>
                 
@@ -111,6 +113,9 @@ export default function App() {
               />
             </>
           )}
+
+          <ShariaGuidelines selectedType={state.animalType} />
+          <AdditionalInfo />
         </main>
       </div>
     </div>
