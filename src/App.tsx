@@ -68,7 +68,6 @@ export default function App() {
         <main className="space-y-6">
           <AnimalForm 
             type={state.animalType} 
-            partners={state.partners} 
             weight={state.totalWeight} 
             onUpdate={updateState} 
           />
@@ -107,7 +106,6 @@ export default function App() {
 
               <ExpenseTracker
                 expenses={state.expenses}
-                partners={state.partners}
                 onAdd={handleAddExpense}
                 onRemove={handleRemoveExpense}
               />

@@ -1,6 +1,6 @@
 {
-  "name": "",
-  "description": "",
+  "name": "964 - قوربانی",
+  "description": "سیستەمی دیجیتاڵی بەڕێوەبردنی قوربانی و چاودێریکردنی دابەشکردنی گۆشت",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }

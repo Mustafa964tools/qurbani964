@@ -4,17 +4,15 @@ import { Expense } from '../types';
 
 interface Props {
   expenses: Expense[];
-  partners: number;
   onAdd: (expense: Omit<Expense, 'id'>) => void;
   onRemove: (id: string) => void;
 }
 
-export function ExpenseTracker({ expenses, partners, onAdd, onRemove }: Props) {
+export function ExpenseTracker({ expenses, onAdd, onRemove }: Props) {
   const [description, setDescription] = useState('');
   const [amount, setAmount] = useState<number | ''>('');
 
   const totalExpense = expenses.reduce((sum, e) => sum + e.amount, 0);
-  const perPartner = partners > 0 ? totalExpense / partners : totalExpense;
 
   const handleAdd = () => {
     if (!description.trim() || !amount || amount <= 0) return;
@@ -97,17 +95,10 @@ export function ExpenseTracker({ expenses, partners, onAdd, onRemove }: Props) {
           </div>
 
           <div className="space-y-4">
-            <div className="flex justify-between items-center pb-4 border-b border-gray-200 dark:border-gray-700">
+            <div className="flex justify-between items-center">
               <span className="text-gray-600 dark:text-gray-400">کۆی گشتی خەرجییەکان:</span>
               <span className="font-bold text-xl text-gray-900 dark:text-white">{formatMoney(totalExpense)} دینار</span>
             </div>
-            
-            {partners > 1 && (
-              <div className="flex justify-between items-center pt-2">
-                <span className="text-gray-600 dark:text-gray-400">پشکی هەر شەریکێک ({partners}):</span>
-                <span className="font-bold text-xl text-primary-600 dark:text-primary-400">{formatMoney(Math.round(perPartner))} دینار</span>
-              </div>
-            )}
           </div>
         </div>
       </div>

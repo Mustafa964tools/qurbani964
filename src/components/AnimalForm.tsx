@@ -3,12 +3,11 @@ import { AnimalType, ANIMAL_SPECS } from '../types';
 
 interface Props {
   type: AnimalType;
-  partners: number;
   weight: number;
   onUpdate: (updates: Partial<{ animalType: AnimalType; partners: number; totalWeight: number }>) => void;
 }
 
-export function AnimalForm({ type, partners, weight, onUpdate }: Props) {
+export function AnimalForm({ type, weight, onUpdate }: Props) {
   const currentSpec = ANIMAL_SPECS[type];
 
   return (
@@ -38,31 +37,8 @@ export function AnimalForm({ type, partners, weight, onUpdate }: Props) {
         ))}
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <div>
-          <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
-            ژمارەی شەریکەکان
-          </label>
-          <input
-            type="number"
-            min={1}
-            max={currentSpec.maxPartners}
-            value={partners}
-            onChange={(e) => {
-              const val = Math.min(Math.max(1, parseInt(e.target.value) || 1), currentSpec.maxPartners);
-              onUpdate({ partners: val });
-            }}
-            disabled={currentSpec.maxPartners === 1}
-            className="w-full bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl px-4 py-3 text-gray-900 dark:text-white focus:ring-2 focus:ring-primary-500 focus:border-primary-500 outline-none transition disabled:opacity-60 disabled:cursor-not-allowed"
-          />
-          {currentSpec.maxPartners === 1 ? (
-            <p className="text-xs text-gray-500 dark:text-gray-400 mt-2">ئەم ئاژەڵە تەنها بۆ 1 پشکە و شەریکی تێدا نابێت.</p>
-          ) : (
-            <p className="text-xs text-gray-500 dark:text-gray-400 mt-2">ئەم ئاژەڵە دەتوانرێت تا {currentSpec.maxPartners} شەریک بەشداری تێدا بکات.</p>
-          )}
-        </div>
-
-        <div>
+      <div className="grid grid-cols-1 gap-6">
+        <div className="col-span-full">
           <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
             کۆی کێشی گۆشتی سافی (بە کیلۆگرام)
           </label>
